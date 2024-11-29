@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício WEB</title>
+</head>
+<body>
+    <div id="corpo">
+        <form action="" onsubmit="return false">
+            <h2 id="titulo">Registro</h2>
+            <input type="password" name="pass" id="pass" placeholder="Digite sua senha">
+            <button type="submit" onclick="verificarSenha(document.getElementById('pass').value)">Verificar</button>
+        </form>
+    </div>
+    <div id="result">
+        <h2 id="resultado"></h2>
+    </div>
+
+    <script>
+        function verificarSenha(senha) {
+            if (senha === '123') {
+                document.getElementById('resultado').innerText = 'Você acertou a senha!'
+            } else if (senha === ''){
+                document.getElementById('resultado').innerText = 'Tente adivinhar a senha!'
+            } else {
+                document.getElementById('resultado').innerText = 'Você errou! Tente novamente.'
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8f8f8;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 300px;
+        }
+
+        #corpo {
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        #result {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</body>
+</html>
